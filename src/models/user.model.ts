@@ -19,7 +19,7 @@ export class User {
   @Max(120, { message: 'Tuổi phải nhỏ hơn 120' })
   public age?: number;
 
-  @Exclude() // Không trả về trong response
+  @Exclude() 
   private password?: string;
 
   public readonly createdAt: Date;
@@ -34,7 +34,6 @@ export class User {
     this.updatedAt = new Date();
   }
 
-  // Instance method
   public getInfo(): UserInfo {
     return {
       id: this.id,

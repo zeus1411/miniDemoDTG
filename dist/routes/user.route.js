@@ -4,13 +4,11 @@ const express_1 = require("express");
 const user_model_1 = require("../models/user.model");
 const userService_1 = require("../services/userService");
 const router = (0, express_1.Router)();
-// In-memory storage (đơn giản cho demo)
 let users = [
     new user_model_1.User(1, 'Nguyen Van A', 'nguyenvana@example.com', 25),
     new user_model_1.User(2, 'Tran Thi B', 'tranthib@example.com', 30),
     new user_model_1.User(3, 'Le Van C', 'levanc@example.com', 28)
 ];
-// GET /api/users - Lấy danh sách users (với async demo)
 router.get('/', async (req, res) => {
     try {
         console.log('📋 Đang lấy danh sách users...');
@@ -32,7 +30,6 @@ router.get('/', async (req, res) => {
         });
     }
 });
-// GET /api/users/:id - Lấy user theo ID
 router.get('/:id', async (req, res) => {
     try {
         const id = parseInt(req.params.id);

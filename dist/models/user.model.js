@@ -21,7 +21,6 @@ class User {
         this.createdAt = new Date();
         this.updatedAt = new Date();
     }
-    // Instance method
     getInfo() {
         return {
             id: this.id,
@@ -55,7 +54,6 @@ __decorate([
     __metadata("design:type", Number)
 ], User.prototype, "age", void 0);
 __decorate([
-    (0, class_transformer_1.Exclude)() // Không trả về trong response
-    ,
+    (0, class_transformer_1.Exclude)(),
     __metadata("design:type", String)
 ], User.prototype, "password", void 0);

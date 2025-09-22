@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": true,
+    "experimentalDecorators": true, // Enable support for decorators
     "emitDecoratorMetadata": true,
     "resolveJsonModule": true
   },

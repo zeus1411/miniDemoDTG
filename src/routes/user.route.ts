@@ -4,14 +4,13 @@ import { AsyncService } from '../services/userService';
 
 const router = Router();
 
-// In-memory storage (đơn giản cho demo)
+
 let users: User[] = [
   new User(1, 'Nguyen Van A', 'nguyenvana@example.com', 25),
   new User(2, 'Tran Thi B', 'tranthib@example.com', 30),
   new User(3, 'Le Van C', 'levanc@example.com', 28)
 ];
 
-// GET /api/users - Lấy danh sách users (với async demo)
 router.get('/', async (req: Request, res: Response): Promise<void> => {
   try {
     console.log('📋 Đang lấy danh sách users...');
@@ -35,7 +34,6 @@ router.get('/', async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-// GET /api/users/:id - Lấy user theo ID
 router.get('/:id', async (req: Request, res: Response): Promise<void> => {
   try {
     const id = parseInt(req.params.id);

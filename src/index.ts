@@ -6,10 +6,8 @@ import { errorHandler } from './middlewares/errorHandler';
 const app = express();
 const PORT = 3000;
 
-// Middleware để parse JSON
 app.use(express.json());
 
-// Simple Hello World Route
 app.get('/', (req, res) => {
   res.json({ 
     message: 'Hello World!',
@@ -17,7 +15,6 @@ app.get('/', (req, res) => {
   });
 });
 
-// Health check endpoint
 app.get('/health', (req, res) => {
   res.json({
     status: 'OK',
@@ -26,13 +23,10 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Routes
 app.use('/api/users', userRoutes);
 
-// Error handling middleware
 app.use(errorHandler);
 
-// Start server
 app.listen(PORT, () => {
   console.log(` Server đang chạy tại http://localhost:${PORT}`);
   console.log(` API Documentation:`);
